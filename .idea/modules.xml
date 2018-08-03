@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mybatisplus-spring-boot.iml" filepath="$PROJECT_DIR$/mybatisplus-spring-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/share-self.iml" filepath="$PROJECT_DIR$/share-self.iml" />
     </modules>
   </component>
 </project>

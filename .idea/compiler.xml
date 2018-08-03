@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mybatisplus-spring-boot" />
+        <module name="share-self" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mybatisplus-spring-boot" target="1.8" />
+      <module name="share-self" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

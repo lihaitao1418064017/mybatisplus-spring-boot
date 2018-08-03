@@ -13,9 +13,11 @@ public class SuperEntity<T extends Model> extends Model<T> {
     /**
      * 主键ID , 这里故意演示注解可以无
      */
-    @TableId("test_id")
+    @TableId("id")
     private Long id;
-    private Long tenantId;
+
+    public Long tenant_id;
+
 
     public Long getId() {
         return this.id;
@@ -25,13 +27,9 @@ public class SuperEntity<T extends Model> extends Model<T> {
         this.id = id;
     }
 
-    public Long getTenantId() {
-        return tenantId;
-    }
-
-    public SuperEntity setTenantId(Long tenantId) {
-        this.tenantId = tenantId;
-        return this;
+    public SuperEntity getSuperEntity(Long tenant_id){
+        this.tenant_id=tenant_id;
+        return  this;
     }
 
     @Override

@@ -19,7 +19,7 @@ public interface UserMapper extends SuperMapper<User> {
      */
     int deleteAll();
 
-    @Select("select test_id as id, name, age, test_type from user")
+    @Select("select id as id, name, age from user")
     List<User> selectListBySQL();
 
     List<User> selectListByWrapper(@Param("ew") Wrapper wrapper);
