@@ -62,3 +62,6 @@ mybatis-plus:
 ##logging
 #logging:
 #  level: warn
+
+#上传文件的路径
+share.file.storage.path: F:/imgAndVideo/all

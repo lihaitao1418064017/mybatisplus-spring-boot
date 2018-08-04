@@ -4,6 +4,8 @@
 	<groupId>com.baomidou</groupId>
 	<artifactId>mybatisplus-spring-boot</artifactId>
 	<version>1.0</version>
+	<!--maven依赖查询网址-->
+    <!--http://www.mvnrepository.com/-->
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -61,6 +63,19 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.16.10</version>
+		</dependency>
+
+
+		<!--<dependency>-->
+			<!--<groupId>org.apache.commons</groupId>-->
+			<!--<artifactId>commons-lang3</artifactId>-->
+			<!--<version>3.3.2</version>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>4.0.12</version>
 		</dependency>
 
 		<!--faseJson-->
