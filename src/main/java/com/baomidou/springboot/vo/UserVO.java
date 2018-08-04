@@ -45,4 +45,25 @@ public class UserVO {
 
     private String role;
 
+
+    /**
+     * 喜欢
+     */
+    private Integer love;
+
+    /**
+     * 关注
+     */
+    private Integer focus;
+
+    /**
+     * 文章数量
+     */
+    private Integer articleSum;
+
+
+    /**
+     * 籍贯
+     */
+    private String address;
 }

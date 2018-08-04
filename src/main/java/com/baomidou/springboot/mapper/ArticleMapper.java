@@ -2,26 +2,30 @@ package com.baomidou.springboot.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.springboot.SuperMapper;
-import com.baomidou.springboot.entity.Student;
+import com.baomidou.springboot.entity.Article;
 import com.baomidou.springboot.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
-
 /**
- * User 表数据库控制层接口
- */
-public interface StudentMapper extends SuperMapper<Student> {
+* @Description:    文章的mapper
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/4 15:32
+* @UpdateUser:
+* @UpdateDate:     2018/8/4 15:32
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
+public interface ArticleMapper extends SuperMapper<Article> {
 
     /**
      * 自定义注入方法
      */
     int deleteAll();
 
-    @Select("select test_id as id, name, age from student")
-    List<Student> selectListBySQL();
 
-    List<Student> selectListByWrapper(@Param("ew") Wrapper wrapper);
+
+    List<Article> selectListByWrapper(@Param("ew") Wrapper wrapper);
 
 }

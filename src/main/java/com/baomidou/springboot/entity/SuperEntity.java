@@ -6,8 +6,14 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 /**
- * 演示实体父类
- */
+* @Description:    实体父类
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/4 15:14
+* @UpdateUser:
+* @UpdateDate:     2018/8/4 15:14
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 public class SuperEntity<T extends Model> extends Model<T> {
 
     /**

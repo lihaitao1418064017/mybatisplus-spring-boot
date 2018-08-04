@@ -115,7 +115,6 @@ public class UserController extends ApiController {
         return page;
     }
 
-
     /**
      * 测试事物
      * http://localhost:8080/user/test_transactional<br>
@@ -145,6 +144,10 @@ public class UserController extends ApiController {
         user.setPhone(vo.getPhone());
         user.setRole(UserRoleEnum.getByRoleName(vo.getRole()));
         user.setSignature(vo.getSignature());
+        user.setAddress(vo.getAddress());
+        user.setLove(vo.getLove());
+        user.setArticleSum(vo.getArticleSum());
+        user.setFocus(vo.getFocus());
         return user;
     }
 
@@ -165,6 +168,10 @@ public class UserController extends ApiController {
         userVO.setPhone(user.getPhone());
         userVO.setRole(user.getRole().getRoleName());
         userVO.setSignature(user.getSignature());
+        userVO.setAddress(user.getAddress());
+        userVO.setLove(user.getLove());
+        userVO.setArticleSum(user.getArticleSum());
+        userVO.setFocus(user.getFocus());
         return userVO;
     }
 }

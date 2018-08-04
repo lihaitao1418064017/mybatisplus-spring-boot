@@ -11,7 +11,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mybatisplus-spring-boot" target="1.8" />
       <module name="share-self" target="1.8" />
     </bytecodeTargetLevel>
   </component>
