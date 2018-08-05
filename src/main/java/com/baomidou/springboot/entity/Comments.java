@@ -15,8 +15,8 @@ import java.util.Date;
 * @Version:        1.0.0
 */
 @Data
-@TableName("comment")
-public class Comment extends SuperEntity<Comment> {
+@TableName("comments")
+public class Comments extends SuperEntity<Comments> {
 
     /**
      * 评论内容

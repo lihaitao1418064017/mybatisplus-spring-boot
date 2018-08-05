@@ -21,10 +21,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 代码生成器，参考源码测试用例：
- * <p>
- * /mybatis-plus/src/test/java/com/baomidou/mybatisplus/test/generator/MysqlGenerator.java
- */
+* @Description:    用户接口
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/5 15:16
+* @UpdateUser:
+* @UpdateDate:     2018/8/5 15:16
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 @RestController
 @RequestMapping("/user")
 public class UserController extends ApiController {

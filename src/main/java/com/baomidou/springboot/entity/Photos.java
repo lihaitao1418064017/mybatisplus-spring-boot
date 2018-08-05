@@ -14,7 +14,7 @@ import lombok.Data;
 */
 @Data
 @TableName("photos")
-public class Photos extends SuperEntity<Photos>{
+public class Photos extends SuperEntity<Photos> {
 
     /**
      * 照片名称

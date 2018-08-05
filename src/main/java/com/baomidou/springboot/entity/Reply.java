@@ -21,7 +21,7 @@ public class Reply extends SuperEntity<Reply> {
     /**
      * 评论
      */
-    private Comment comment;
+    private Comments comments;
 
 
     /**
