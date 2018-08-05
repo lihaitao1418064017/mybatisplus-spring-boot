@@ -18,21 +18,16 @@ import java.util.Date;
 @TableName("reply")
 public class Reply extends SuperEntity<Reply> {
 
-    /**
-     * 评论
-     */
-    private Comments comments;
-
 
     /**
-     * 评论内容
+     * 父评论id
      */
-    private String content;
+    private Long parent_id;
 
     /**
-     * 回复评论时间
+     * 子评论id
      */
-    private Date date=new Date();
+    private Long child_id;
 
 
 }

@@ -25,7 +25,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/article_photos")
 public class PhotoArticleController extends ApiController {
-
+    //允许上传的文件格式
+    private static String[] allowFiles = { ".rar", ".doc", ".docx", ".zip",
+            ".pdf", ".txt", ".swf", ".xlsx", ".gif", ".png", ".jpg", ".jpeg",
+            ".bmp", ".xls", ".mp4", ".flv", ".ppt", ".avi", ".mpg", ".wmv",
+            ".3gp", ".mov", ".asf", ".asx", ".vob", ".wmv9", ".rm", ".rmvb" };
     @Autowired
     private IPhotosService photosService;
 
