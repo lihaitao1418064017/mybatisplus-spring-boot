@@ -15,7 +15,7 @@ import lombok.Data;
 @SuppressWarnings("serial")
 @Data
 @TableName("video")
-public class Video {
+public class Video extends SuperEntity<Video> {
 
     /**
      * 文章

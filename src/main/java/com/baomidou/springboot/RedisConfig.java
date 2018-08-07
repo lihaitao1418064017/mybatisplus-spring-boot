@@ -1,4 +1,4 @@
-package com.baomidou.springboot.config;
+package com.baomidou.springboot;
 
 import com.baomidou.springboot.redis.RedisObjectSerializer;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +24,7 @@ public class RedisConfig {
         template.setValueSerializer(new RedisObjectSerializer());
         return template;
     }
+
 
 
 }

@@ -1,10 +1,9 @@
-package com.baomidou.springboot;
+package com.baomidou.springboot.response;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
 import java.util.*;
 
 public class ResponseMessage<T> implements Serializable {

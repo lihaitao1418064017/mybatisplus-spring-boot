@@ -1,7 +1,7 @@
 package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.ResponseMessage;
+import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.entity.Article;
 import com.baomidou.springboot.entity.Photos;
 import com.baomidou.springboot.service.IArticleService;
@@ -25,11 +25,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/article_photos")
 public class PhotoArticleController extends ApiController {
-    //允许上传的文件格式
-    private static String[] allowFiles = { ".rar", ".doc", ".docx", ".zip",
-            ".pdf", ".txt", ".swf", ".xlsx", ".gif", ".png", ".jpg", ".jpeg",
-            ".bmp", ".xls", ".mp4", ".flv", ".ppt", ".avi", ".mpg", ".wmv",
-            ".3gp", ".mov", ".asf", ".asx", ".vob", ".wmv9", ".rm", ".rmvb" };
+
     @Autowired
     private IPhotosService photosService;
 

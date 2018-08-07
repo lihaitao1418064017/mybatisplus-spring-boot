@@ -3,7 +3,6 @@ package com.baomidou.springboot.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import java.util.Date;
 
 /**
 * @Description:    评论回复
@@ -18,16 +17,20 @@ import java.util.Date;
 @TableName("reply")
 public class Reply extends SuperEntity<Reply> {
 
+    /**
+     * 文章
+     */
+    private Article article;
 
     /**
      * 父评论id
      */
-    private Long parent_id;
+    private Comments parentId;
 
     /**
      * 子评论id
      */
-    private Long child_id;
+    private Comments childId;
 
 
 }

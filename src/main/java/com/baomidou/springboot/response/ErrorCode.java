@@ -1,4 +1,4 @@
-package com.baomidou.springboot;
+package com.baomidou.springboot.response;
 
 import com.baomidou.mybatisplus.extension.api.IErrorCode;
 
