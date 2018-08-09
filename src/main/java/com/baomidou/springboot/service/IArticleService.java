@@ -19,6 +19,5 @@ public interface IArticleService extends IService<Article> {
 
 	boolean deleteAll();
 
-
-	public List<Article> selectListByWrapper(Wrapper wrapper);
+	List<Article> selectListByWrapper(Wrapper wrapper);
 }

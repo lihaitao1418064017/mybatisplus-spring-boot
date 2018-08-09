@@ -7,13 +7,17 @@ import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.ApiResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
+import com.baomidou.springboot.entity.Article;
+import com.baomidou.springboot.entity.User;
+import com.baomidou.springboot.entity.enums.ArticleType;
+import com.baomidou.springboot.redis.ICache;
 import com.baomidou.springboot.response.ErrorCode;
 import com.baomidou.springboot.response.ResponseMessage;
-import com.baomidou.springboot.entity.Article;
-import com.baomidou.springboot.entity.enums.ArticleType;
 import com.baomidou.springboot.service.IArticleService;
+import com.baomidou.springboot.service.IUserService;
 import com.baomidou.springboot.vo.ArticleVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,8 +39,13 @@ public class ArticleController extends ApiController {
 
     @Autowired
     private IArticleService articleService;
+    @Autowired
+    private IUserService userService;
 
+    private static final String ARTICLE_KEY="article_page";
 
+    @Autowired
+    private ICache cache;
 
     /**
      * <p>
@@ -56,9 +65,11 @@ public class ArticleController extends ApiController {
      */
     @PostMapping("/add")
     public ResponseMessage<Boolean> addUser(@RequestBody ArticleVO vo,@RequestParam("id")String id) {
-        vo.getUser().setId(Long.parseLong(id));
+        User user=userService.selectById(id);
+        vo.setUser(user);
         return ResponseMessage.ok(articleService.insert(modelToEntity(vo)));
     }
+
     /**
      * 删除
      */
@@ -83,10 +94,13 @@ public class ArticleController extends ApiController {
     @GetMapping("/page")
     public ResponseMessage page(@RequestParam("pageSize")Integer pageSize, @RequestParam("pageNo")Integer pageNo) {
         QueryWrapper queryWrapper=new QueryWrapper();
-        return ResponseMessage.ok(articleService.selectPage(new Page<Article>(pageNo-1, pageSize), queryWrapper));
+        if(cache.isExist(ARTICLE_KEY)){
+            return ResponseMessage.ok(cache.setGetMemberOfSetMap(ARTICLE_KEY));
+        }
+        IPage<Article> page= articleService.selectPage(new Page<Article>(pageNo-1, pageSize), queryWrapper);
+        cache.setAddSetMap(ARTICLE_KEY,page);
+        return ResponseMessage.ok(page);
     }
-
-
 
 
     /**

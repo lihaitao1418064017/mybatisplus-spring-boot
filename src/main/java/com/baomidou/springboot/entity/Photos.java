@@ -26,4 +26,6 @@ public class Photos extends SuperEntity<Photos> {
      */
     private Article article;
 
+    private String article_id;
+
 }

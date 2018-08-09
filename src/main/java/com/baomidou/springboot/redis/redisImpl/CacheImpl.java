@@ -6,10 +6,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,6 +20,34 @@ public class CacheImpl implements ICache {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    /**
+     * 设置过期时间
+     * @param key
+     */
+    @Override
+    public void expire(String key,Long second,TimeUnit timeUnit){
+
+        redisTemplate.expire(key,second,timeUnit);
+    }
+
+    /**
+     *设置过期时间到某时
+     * @param key
+     */
+    @Override
+    public void expireAt(String key,Date date){
+        redisTemplate.expireAt(key,date);
+    }
+
+    /**
+     * 判断是否存在
+     * @param key
+     */
+    @Override
+    public boolean isExist(String key){
+        return redisTemplate.hasKey(key);
+    }
 
 
     @Override

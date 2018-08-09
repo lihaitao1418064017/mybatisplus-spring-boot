@@ -5,8 +5,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 
 /**
- * 测试枚举
- */
+* @Description:    用户角色枚举类
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/8 21:42
+* @UpdateUser:
+* @UpdateDate:     2018/8/8 21:42
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum UserRoleEnum implements IEnum<Integer> {
     SIMPLE(0,"普通会员"),

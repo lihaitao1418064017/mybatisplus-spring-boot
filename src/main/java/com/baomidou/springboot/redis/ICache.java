@@ -2,6 +2,8 @@ package com.baomidou.springboot.redis;
 
 
 import java.util.Collection;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * author:LiHaitao
@@ -22,4 +24,11 @@ public interface ICache extends IStringCache,ISetCache,IListCache,IHashCache {
      * @param keys
      */
     void deleteFromRedis(Collection<String> keys);
+
+
+    void expire(String key, Long second, TimeUnit timeUnit);
+
+    void expireAt(String key,Date date);
+
+    boolean isExist(String key);
 }
