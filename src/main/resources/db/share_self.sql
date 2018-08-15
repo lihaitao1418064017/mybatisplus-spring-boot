@@ -27,7 +27,7 @@ CREATE TABLE `article` (
   `date` date DEFAULT NULL COMMENT '鍙戣〃鏃ユ湡',
   `article_type` int(11) DEFAULT NULL COMMENT '鏂囩珷绫诲瀷',
   `recommend` int(11) DEFAULT NULL COMMENT '鎺ㄨ崘',
-  `user` int(11) DEFAULT NULL COMMENT '鍙戣〃鐢ㄦ埛',
+  `user_id` int(11) DEFAULT NULL COMMENT '鍙戣〃鐢ㄦ埛',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -43,8 +43,8 @@ CREATE TABLE `comments` (
   `id` bigint(20) NOT NULL COMMENT '主键ID',
   `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
   `content` text COMMENT '评论内容',
-  `user` int(11) DEFAULT NULL COMMENT '用户',
-  `article` int(11) DEFAULT NULL COMMENT '文章',
+  `user_id` int(11) DEFAULT NULL COMMENT '用户',
+  `article_id` int(11) DEFAULT NULL COMMENT '文章',
   `date` date DEFAULT NULL COMMENT '评论日期',
   `praise` int(11) DEFAULT NULL COMMENT '赞数',
   PRIMARY KEY (`id`)
@@ -62,7 +62,7 @@ CREATE TABLE `photos` (
   `id` bigint(20) NOT NULL COMMENT '涓婚敭ID',
   `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
   `url` int(11) DEFAULT NULL COMMENT 'uri',
-  `article` int(11) DEFAULT NULL COMMENT '鏂囩珷',
+  `article_id` int(11) DEFAULT NULL COMMENT '鏂囩珷',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -77,7 +77,7 @@ DROP TABLE IF EXISTS `reply`;
 CREATE TABLE `reply` (
   `id` bigint(20) NOT NULL COMMENT '主键ID',
   `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
-  `article` int(11) DEFAULT NULL COMMENT '评论内容',
+  `article_id` int(11) DEFAULT NULL COMMENT '评论文章',
   `parent_id` int(11) DEFAULT NULL COMMENT '父评论',
   `child_id` int(11) DEFAULT NULL COMMENT '子评论',
   PRIMARY KEY (`id`)
@@ -121,7 +121,7 @@ CREATE TABLE `video` (
   `id` bigint(20) NOT NULL COMMENT '涓婚敭ID',
   `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
   `url` int(11) DEFAULT NULL COMMENT 'uri',
-  `article` int(11) DEFAULT NULL COMMENT '鏂囩珷',
+  `article_id` int(11) DEFAULT NULL COMMENT '鏂囩珷',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
